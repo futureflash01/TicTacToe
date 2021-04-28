@@ -37,6 +37,7 @@ namespace TicTacToe
             this.resetScoreboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.A1 = new System.Windows.Forms.Button();
             this.A2 = new System.Windows.Forms.Button();
             this.A3 = new System.Windows.Forms.Button();
@@ -61,12 +62,14 @@ namespace TicTacToe
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.darkModeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(258, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.DoubleClick += new System.EventHandler(this.menuStrip1_DoubleClick);
             // 
             // fileToolStripMenuItem
             // 
@@ -82,14 +85,14 @@ namespace TicTacToe
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // changeGameModeToolStripMenuItem
             // 
             this.changeGameModeToolStripMenuItem.Name = "changeGameModeToolStripMenuItem";
-            this.changeGameModeToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.changeGameModeToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.changeGameModeToolStripMenuItem.Text = "Change Game Mode";
             this.changeGameModeToolStripMenuItem.Click += new System.EventHandler(this.changeGameModeToolStripMenuItem_Click);
             // 
@@ -98,14 +101,14 @@ namespace TicTacToe
             this.resetScoreboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetScoreboardToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.resetScoreboardToolStripMenuItem.Name = "resetScoreboardToolStripMenuItem";
-            this.resetScoreboardToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.resetScoreboardToolStripMenuItem.Text = "Reset Scoreboard";
+            this.resetScoreboardToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.resetScoreboardToolStripMenuItem.Text = "Reset Scoreboard and Settings";
             this.resetScoreboardToolStripMenuItem.Click += new System.EventHandler(this.clearScoreToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -117,8 +120,17 @@ namespace TicTacToe
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // darkModeToolStripMenuItem
+            // 
+            this.darkModeToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
+            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.darkModeToolStripMenuItem.Text = "Dark Mode";
+            this.darkModeToolStripMenuItem.Click += new System.EventHandler(this.darkModeToolStripMenuItem_Click);
+            // 
             // A1
             // 
+            this.A1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.A1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.A1.Location = new System.Drawing.Point(9, 31);
             this.A1.Name = "A1";
@@ -131,6 +143,7 @@ namespace TicTacToe
             // 
             // A2
             // 
+            this.A2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.A2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.A2.Location = new System.Drawing.Point(90, 31);
             this.A2.Name = "A2";
@@ -143,6 +156,7 @@ namespace TicTacToe
             // 
             // A3
             // 
+            this.A3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.A3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.A3.Location = new System.Drawing.Point(171, 31);
             this.A3.Name = "A3";
@@ -155,6 +169,7 @@ namespace TicTacToe
             // 
             // B3
             // 
+            this.B3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.B3.Location = new System.Drawing.Point(171, 112);
             this.B3.Name = "B3";
@@ -167,6 +182,7 @@ namespace TicTacToe
             // 
             // B2
             // 
+            this.B2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.B2.Location = new System.Drawing.Point(90, 112);
             this.B2.Name = "B2";
@@ -179,6 +195,7 @@ namespace TicTacToe
             // 
             // B1
             // 
+            this.B1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.B1.Location = new System.Drawing.Point(9, 112);
             this.B1.Name = "B1";
@@ -191,6 +208,7 @@ namespace TicTacToe
             // 
             // C3
             // 
+            this.C3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.C3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.C3.Location = new System.Drawing.Point(171, 193);
             this.C3.Name = "C3";
@@ -203,6 +221,7 @@ namespace TicTacToe
             // 
             // C2
             // 
+            this.C2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.C2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.C2.Location = new System.Drawing.Point(90, 193);
             this.C2.Name = "C2";
@@ -215,6 +234,7 @@ namespace TicTacToe
             // 
             // C1
             // 
+            this.C1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.C1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.C1.Location = new System.Drawing.Point(9, 193);
             this.C1.Name = "C1";
@@ -228,6 +248,7 @@ namespace TicTacToe
             // scoreBoardLabel
             // 
             this.scoreBoardLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreBoardLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.scoreBoardLabel.Location = new System.Drawing.Point(6, 277);
             this.scoreBoardLabel.Name = "scoreBoardLabel";
             this.scoreBoardLabel.Size = new System.Drawing.Size(240, 23);
@@ -238,6 +259,7 @@ namespace TicTacToe
             // playerXLabel
             // 
             this.playerXLabel.AutoSize = true;
+            this.playerXLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.playerXLabel.Location = new System.Drawing.Point(28, 304);
             this.playerXLabel.Name = "playerXLabel";
             this.playerXLabel.Size = new System.Drawing.Size(46, 13);
@@ -248,6 +270,7 @@ namespace TicTacToe
             // 
             this.tiesLabel.AutoSize = true;
             this.tiesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiesLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tiesLabel.Location = new System.Drawing.Point(113, 304);
             this.tiesLabel.Name = "tiesLabel";
             this.tiesLabel.Size = new System.Drawing.Size(27, 13);
@@ -257,6 +280,7 @@ namespace TicTacToe
             // playerOLabel
             // 
             this.playerOLabel.AutoSize = true;
+            this.playerOLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.playerOLabel.Location = new System.Drawing.Point(181, 304);
             this.playerOLabel.Name = "playerOLabel";
             this.playerOLabel.Size = new System.Drawing.Size(47, 13);
@@ -266,6 +290,7 @@ namespace TicTacToe
             // playerXScore
             // 
             this.playerXScore.AutoSize = true;
+            this.playerXScore.ForeColor = System.Drawing.SystemColors.ControlText;
             this.playerXScore.Location = new System.Drawing.Point(41, 327);
             this.playerXScore.Name = "playerXScore";
             this.playerXScore.Size = new System.Drawing.Size(13, 13);
@@ -275,6 +300,7 @@ namespace TicTacToe
             // tiesScore
             // 
             this.tiesScore.AutoSize = true;
+            this.tiesScore.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tiesScore.Location = new System.Drawing.Point(120, 327);
             this.tiesScore.Name = "tiesScore";
             this.tiesScore.Size = new System.Drawing.Size(13, 13);
@@ -284,6 +310,7 @@ namespace TicTacToe
             // playerOScore
             // 
             this.playerOScore.AutoSize = true;
+            this.playerOScore.ForeColor = System.Drawing.SystemColors.ControlText;
             this.playerOScore.Location = new System.Drawing.Point(197, 327);
             this.playerOScore.Name = "playerOScore";
             this.playerOScore.Size = new System.Drawing.Size(13, 13);
@@ -319,6 +346,7 @@ namespace TicTacToe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tic Tac Toe";
             this.Load += new System.EventHandler(this.TicTacToeForm_Load);
+            this.DoubleClick += new System.EventHandler(this.TicTacToeForm_DoubleClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -351,6 +379,7 @@ namespace TicTacToe
         private System.Windows.Forms.Label playerOScore;
         private System.Windows.Forms.ToolStripMenuItem resetScoreboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeGameModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkModeToolStripMenuItem;
     }
 }
 

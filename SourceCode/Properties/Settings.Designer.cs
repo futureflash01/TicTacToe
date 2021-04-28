@@ -70,5 +70,17 @@ namespace TicTacToe.Properties {
                 this["isAI"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isDarkMode {
+            get {
+                return ((bool)(this["isDarkMode"]));
+            }
+            set {
+                this["isDarkMode"] = value;
+            }
+        }
     }
 }
